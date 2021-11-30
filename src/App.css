@@ -1,38 +1,298 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap");
+
 .App {
   text-align: center;
+  font: "https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap";
+  font-family: "Lucida Console", "Courier New", monospace;
+
+  background-color: #ddf4e3;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.header {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  background-color: aquamarine;
+  height: 100px;
+  /*gap*/
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#Title {
+  height: 50%;
+  width: auto;
+}
+#RickMorty {
+  height: 50%;
+  width: auto;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+h1 {
+  font-size: 8vmin;
+}
+
+.mb-3 {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+}
+
+#close:hover,
+#close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+/*
+.modalBackground {
+  background-color: blanchedalmond;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  font-weight: bolder;
+  font-size: large;
+  position: relative;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+}
+*/
+/*.modalContainer {
+  background: #61dafb;
+}*/
+
+.box {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  width: 80%;
+  height: 50vh;
+  background-color: rgba(196, 243, 178, 0.5);
+  color: rgb(241, 16, 166);
+  border-radius: 30px;
+  overflow: hidden;
+  z-index: 10;
+  flex-direction: column;
+  padding-top: 100px;
+  font-weight: bolder;
+  position: absolute;
+  float: left;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+/*#flip-card {
+  background-color: transparent;
+  width: 300px;
+  height: 200px;
+  border: 1px solid #f1f1f1;
+  perspective: 1000px;
+}*/
+@keyframes move {
+  100% {
+    transform: translate3d(0, 0, 1px) rotate(360deg);
+  }
 }
 
-.App-link {
-  color: #61dafb;
+/* .background {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background: #3e1e68;
+  overflow: hidden;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.background #rotate span {
+  width: 20vmin;
+  height: 20vmin;
+  border-radius: 20vmin;
+  backface-visibility: hidden;
+  position: absolute;
+  animation: move;
+  animation-duration: 45;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
 }
+
+.background #rotate span:nth-child(0) {
+  color: #583c87;
+  top: 68%;
+  left: 85%;
+  animation-duration: 24s;
+  animation-delay: -27s;
+  transform-origin: -15vw 4vh;
+  box-shadow: -40vmin 0 5.903146785411892vmin currentColor;
+}
+.background #rotate span:nth-child(1) {
+  color: #583c87;
+  top: 20%;
+  left: 9%;
+  animation-duration: 24s;
+  animation-delay: -32s;
+  transform-origin: -4vw -11vh;
+  box-shadow: 40vmin 0 5.721312117052971vmin currentColor;
+}
+.background #rotate span:nth-child(2) {
+  color: #583c87;
+  top: 10%;
+  left: 35%;
+  animation-duration: 35s;
+  animation-delay: -46s;
+  transform-origin: 5vw -14vh;
+  box-shadow: -40vmin 0 5.532183427812523vmin currentColor;
+}
+.background #rotate span:nth-child(3) {
+  color: #583c87;
+  top: 61%;
+  left: 26%;
+  animation-duration: 15s;
+  animation-delay: -25s;
+  transform-origin: -13vw 7vh;
+  box-shadow: -40vmin 0 5.2231367408370755vmin currentColor;
+}
+.background #rotate span:nth-child(4) {
+  color: #ffacac;
+  top: 97%;
+  left: 25%;
+  animation-duration: 14s;
+  animation-delay: -42s;
+  transform-origin: 5vw -18vh;
+  box-shadow: 40vmin 0 5.021994674507868vmin currentColor;
+}
+.background #rotate span:nth-child(5) {
+  color: #583c87;
+  top: 64%;
+  left: 95%;
+  animation-duration: 10s;
+  animation-delay: -37s;
+  transform-origin: -5vw 25vh;
+  box-shadow: -40vmin 0 5.583839421984824vmin currentColor;
+}
+.background #rotate span:nth-child(6) {
+  color: #e45a84;
+  top: 15%;
+  left: 16%;
+  animation-duration: 49s;
+  animation-delay: -30s;
+  transform-origin: -23vw -5vh;
+  box-shadow: 40vmin 0 5.3985834169382185vmin currentColor;
+}
+.background #rotate span:nth-child(7) {
+  color: #ffacac;
+  top: 77%;
+  left: 68%;
+  animation-duration: 41s;
+  animation-delay: -17s;
+  transform-origin: 5vw -15vh;
+  box-shadow: -40vmin 0 5.471018052666451vmin currentColor;
+}
+.background #rotate span:nth-child(8) {
+  color: #ffacac;
+  top: 32%;
+  left: 6%;
+  animation-duration: 32s;
+  animation-delay: -2s;
+  transform-origin: 3vw 22vh;
+  box-shadow: 40vmin 0 5.885189712501293vmin currentColor;
+}
+.background #rotate span:nth-child(9) {
+  color: #e45a84;
+  top: 41%;
+  left: 28%;
+  animation-duration: 52s;
+  animation-delay: -32s;
+  transform-origin: 17vw -12vh;
+  box-shadow: -40vmin 0 5.078010439420567vmin currentColor;
+}
+.background #rotate span:nth-child(10) {
+  color: #e45a84;
+  top: 17%;
+  left: 89%;
+  animation-duration: 6s;
+  animation-delay: -18s;
+  transform-origin: 0vw 1vh;
+  box-shadow: 40vmin 0 5.2494128647463265vmin currentColor;
+}
+.background #rotate span:nth-child(11) {
+  color: #ffacac;
+  top: 74%;
+  left: 19%;
+  animation-duration: 47s;
+  animation-delay: -30s;
+  transform-origin: -8vw 9vh;
+  box-shadow: 40vmin 0 5.000138996315933vmin currentColor;
+}
+.background #rotate span:nth-child(12) {
+  color: #e45a84;
+  top: 54%;
+  left: 27%;
+  animation-duration: 48s;
+  animation-delay: -25s;
+  transform-origin: 11vw -12vh;
+  box-shadow: 40vmin 0 5.751796042297121vmin currentColor;
+}
+.background #rotate span:nth-child(13) {
+  color: #e45a84;
+  top: 100%;
+  left: 20%;
+  animation-duration: 51s;
+  animation-delay: -13s;
+  transform-origin: -16vw 17vh;
+  box-shadow: -40vmin 0 5.305391275958524vmin currentColor;
+}
+.background #rotate span:nth-child(14) {
+  color: #ffacac;
+  top: 95%;
+  left: 91%;
+  animation-duration: 6s;
+  animation-delay: -32s;
+  transform-origin: -15vw -15vh;
+  box-shadow: -40vmin 0 5.561015076731801vmin currentColor;
+}
+.background #rotate span:nth-child(15) {
+  color: #ffacac;
+  top: 12%;
+  left: 74%;
+  animation-duration: 32s;
+  animation-delay: -33s;
+  transform-origin: -18vw 3vh;
+  box-shadow: -40vmin 0 5.68066823499347vmin currentColor;
+}
+.background #rotate span:nth-child(16) {
+  color: #e45a84;
+  top: 7%;
+  left: 79%;
+  animation-duration: 19s;
+  animation-delay: -33s;
+  transform-origin: -22vw 1vh;
+  box-shadow: -40vmin 0 5.896405271026985vmin currentColor;
+}
+.background #rotate span:nth-child(17) {
+  color: #583c87;
+  top: 12%;
+  left: 23%;
+  animation-duration: 46s;
+  animation-delay: -20s;
+  transform-origin: 3vw -23vh;
+  box-shadow: 40vmin 0 5.527636171586986vmin currentColor;
+}
+.background #rotate span:nth-child(18) {
+  color: #ffacac;
+  top: 18%;
+  left: 72%;
+  animation-duration: 18s;
+  animation-delay: -5s;
+  transform-origin: 17vw 7vh;
+  box-shadow: -40vmin 0 5.940815749073096vmin currentColor;
+}
+.background #rotate span:nth-child(19) {
+  color: #e45a84;
+  top: 72%;
+  left: 84%;
+  animation-duration: 7s;
+  animation-delay: -50s;
+  transform-origin: -19vw -5vh;
+  box-shadow: 40vmin 0 5.831132372113236vmin currentColor;
+} */
